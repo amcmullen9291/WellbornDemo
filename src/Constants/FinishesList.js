@@ -24,7 +24,7 @@ let [finishesList, setFinishesList ] = useState([
 ]);
 
 const fetchFinishes = () => {
-    dispatch(setStadiumList(finishesList));
+    dispatch(setFinishList(finishesList));
     console.log("Current listings:", finishesList)
   };
   
