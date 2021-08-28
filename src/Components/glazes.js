@@ -7,13 +7,13 @@ function pork() {
     <div className="App">
             <center><h1 id="welcomePage">Wellborn Cabinets</h1></center>
             <div id="sidenav">
-      <a className="navmenu" href={"/wordpress/pork"}>Ｓｔａｉｎｓ</a><br/>
+      <a className="navmenu" href={"/wordpress/stains"}>Ｓｔａｉｎｓ</a><br/>
       <hr className="spacer"/>
-      <a className="navmenu" href={"/wordpress/beans"}>Ｇｌａｚｅｓ</a><br/>
+      <a className="navmenu" href={"/wordpress/glazes"}>Ｇｌａｚｅｓ</a><br/>
       <hr className="spacer"/>
       <a className="navmenu" href={"/wordpress/paints"}>Ｐａｉｎｔｓ</a><br/>
       <hr className="spacer"/>
-      <a className="navmenu" href={"/wordpress/laminites"}>Ｌａｍｉｎａｔｅｓ</a><br/>
+      <a className="navmenu" href={"/wordpress/laminates"}>Ｌａｍｉｎａｔｅｓ</a><br/>
       <hr className="spacer"/>
       <a className="navmenu" href={"/wordpress/melamine"}>Ｍｅｌａｍｉｎｅ</a> 
       <hr/> 
@@ -30,7 +30,7 @@ function pork() {
     </div>
     <div id="middleArea">
 <div id="blogHolder">
-    <center><p id="blog">Pork Page</p></center>
+    <center><p id="blog">Glazes Page</p></center>
 </div>
 </div>
 

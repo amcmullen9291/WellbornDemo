@@ -1,10 +1,10 @@
 
 # Wellborn Cabinets Demo
-This project is a demo showing available finishes; stains, stain with glaze, paints, paints with glaze, medium density fiberboard, medium density fiberboard with glaze, laminates, and melamine. It was built using create-react-wptheme and uses WordPress as the development server to consolidate frontend and backend development. This is only the theme; frontend repo located at: https://github.com/amcmullen9291/wellborn-demo-react.git .
+This project is a demo showing available finishes; stains, stain with glaze, paints, paints with glaze, medium density fiberboard, medium density fiberboard with glaze, laminates, and melamine. It was built using create-react-wptheme and uses WordPress as the development server to consolidate frontend and backend development. 
 
 To run create-react-wptheme in your Ubutnu terminal cd into, or open a git bash terminal in, ../c/xampp/htdocs/wordpress/wp-content/themes.
 
-Log into with your xampp servers running, site can be viewed at localhost/wordpress.
+Site can be viewed at localhost/wordpress.
 
 
 ## Available Scripts
@@ -73,5 +73,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-# Demo.theme
-# WellbornDemo
+
+# Wellborn Demo

@@ -1,9 +1,7 @@
 import React from 'react'
-import Middlearea from './middlearea';
 
-function welcome() {
+function beans() {
   return (
-    <div>
               <>
         <div id="container">
         <div className="App">
@@ -30,12 +28,15 @@ function welcome() {
                 </span>
                 <p>Hello.</p>
         </div>
-        <Middlearea/>
+        <div id="middleArea">
+    <div id="blogHolder">
+        <center><p id="blog">Paints Page</p></center>
+    </div>
+</div>
+
         </div>
         </>
-
-    </div>
-  )
+)
 }
 
-export default welcome
+export default beans
