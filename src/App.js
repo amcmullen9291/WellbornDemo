@@ -9,6 +9,7 @@ import melamine from './Components/melamine';
 import laminates from './Components/laminates';
 import emailForm from './Components/emailForm';
 
+//change path to wordpress/:finish
 function App() {
   return (
     <>

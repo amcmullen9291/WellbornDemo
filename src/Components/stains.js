@@ -29,7 +29,7 @@ function beans() {
                 <p>Hello.</p>
         </div>
         <div id="middleArea">
-            <button id="emailButton">Contact Us</button>
+        <a id="emailButton" href={"/wordpress/contact"}>Contact Us</a>
     <div id="blogHolder">
         <center><p id="blog">Stains Page</p></center>
     </div>
