@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function beans() {
   return (
               <>
@@ -36,6 +37,7 @@ function beans() {
 </div>
 
         </div>
+        <input type="hidden" id="finishesCounter" name="finishesCounter" value={finishesList.length}/>
         </>
 )
 }

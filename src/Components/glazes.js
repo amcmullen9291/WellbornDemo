@@ -36,6 +36,7 @@ function pork() {
 </div>
 
     </div>
+    <input type="hidden" id="finishesCounter" name="finishesCounter" git add/>
     </>
 
 )
