@@ -29,6 +29,7 @@ function pork() {
             <p>Hello.</p>
     </div>
     <div id="middleArea">
+    <a id="emailButton" href={"/wordpress/"}>Contact Us</a>
 <div id="blogHolder">
     <center><p id="blog">Glazes Page</p></center>
 </div>

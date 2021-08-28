@@ -3,10 +3,11 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@devloco\/react-scripts-wptheme": "^3.4.1-wp.1",
-        "@testing-library\/jest-dom": "^4.2.4",
-        "@testing-library\/react": "^9.3.2",
-        "@testing-library\/user-event": "^7.1.2",
+        "@devloco/react-scripts-wptheme": "^3.4.1-wp.1",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "emailjs-com": "^3.2.0",
         "react": "^17.0.2",
         "react-dom": "^17.0.2",
         "react-redux": "^7.2.4",
@@ -41,6 +42,6 @@
             "last 1 safari version"
         ]
     },
-    "homepage": "\/wordpress\/wp-content\/themes\/demo",
-    "browserLaunchTo": "http:\/\/localhost\/wordpress"
+    "homepage": "/wordpress/wp-content/themes/demo",
+    "browserLaunchTo": "http://localhost/wordpress"
 }

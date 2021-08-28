@@ -7,6 +7,7 @@ import welcome from './Components/welcome';
 import paints from './Components/paints';
 import melamine from './Components/melamine';
 import laminates from './Components/laminates';
+import emailForm from './Components/emailForm';
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path={"/wordpress/paints/"} exact component={paints}/>
           <Route path={"/wordpress/laminates/"} exact component={laminates}/>
           <Route path={"/wordpress/melamine/"} exact component={melamine}/>
+          <Route path={"/wordpress/contact/"} exact component={emailForm}/>
+
           <Redirect to={"/wordpress/"} />
         </Switch>
     </Router>

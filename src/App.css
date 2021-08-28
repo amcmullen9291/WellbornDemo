@@ -46,7 +46,7 @@ hr {
    height:75%;
    width:98%;
     background-color: antiquewhite;
-    background-color: none;
+    /* background-color: none; */
     margin-left: 1%;
     margin-right: 1%;
     border-bottom: 5px solid red;
@@ -65,6 +65,17 @@ hr {
 
  #blogHolder{
    margin-top:3%
+ }
+
+ #emailContainer{
+   margin-top: 5%;
+   border: 3px solid salmon;
+   width: 750px;
+   margin-left:25%;
+   height: 350px;
+   background-color: lightgreen;
+   background-image: url("./BarnwoodOak.jpg");
+
  }
 
  #addy{
@@ -142,4 +153,33 @@ hr {
 
 #finishtablehead{
   background-color: cornflowerblue;
+}
+
+textarea {
+  width: 700px;
+  height: 100px;
+  overflow-y:auto;
+  border: 2px solid yellow;
+}
+
+#emailSend{
+  margin-left: 50%;
+  background-color: blue;
+}
+
+#emailMiddleArea{
+  position:absolute;
+  bottom:0;
+  height:75%;
+  width:98%;
+   background-color: rebeccapurple;
+   /* background-color: none; */
+   margin-left: 1%;
+   margin-right: 1%;
+   border-bottom: 5px solid red;
+   border-top: 3px solid #003A64;
+}
+
+#emailButton{
+  margin-left: 92%;
 }

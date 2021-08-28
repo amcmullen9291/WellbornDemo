@@ -29,6 +29,7 @@ function beans() {
                 <p>Hello.</p>
         </div>
         <div id="middleArea">
+            <button id="emailButton">Contact Us</button>
     <div id="blogHolder">
         <center><p id="blog">Stains Page</p></center>
     </div>
