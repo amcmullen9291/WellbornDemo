@@ -1,5 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
+import Select from 'react-select';
 
 export default function emailForm() {
 
@@ -17,6 +18,13 @@ export default function emailForm() {
   // const options = [
   //   'Stains', 'Glazes', 'Paints', "Laminates", "Melamine"
   // ];
+  const finishes = [
+    { label: "Stains", value: "Stains" },
+    { label: "Glazes", value: "Glazes" },
+    { label: "Paints", value: "Paints" },
+    { label: "Laminates", value: "Laminates" },
+    { label: "Melamine", value: "Melamine" },   
+  ];
 
   return (
     <>
@@ -49,20 +57,18 @@ export default function emailForm() {
 <div id="blogHolder">
   {/* change form message to dropdowm menus */}
   <form id="emailContainer" onSubmit={sendEmail}>
+    <br/>
       <input type="hidden" name="contact_number" />
-      <label>Hello, my name is</label>, 
-      <input type="text" name="from_name" />
-      <label>. I would like more information about:</label>
-            
-      <br/><input type="text" name="subject" /><br/>
-      <div>(please email your email address)</div>
-      <label>Email</label>
-      <input type="email" name="from_email" /><br/>
+      <label className="emailText">Hello, my name is</label> 
+      <input type="text" id="emailName" name="from_name" />.<br/><br/>
+     <center><label className="emailText">I would like more information about Wellborn</label>
+      <Select  name="subject" id="emailList" options={ finishes } />
       <br/>
       <hr/>
-      <label>Additional information:</label><br/>
-      <center><textarea name="html_message" /></center> <br/><br/>
-      <input id="emailSend" type="submit" value="Contact us" />
+      <div className="emailText">Additional information:</div>
+      <input type="text" name="telphone" placeholder="telephone number" /><br/>
+      <input type="email" name="from_email" placeholder="enter email"/><br/>
+      <input id="emailSend" type="submit" value="Request Brochure" /></center>
     </form>
 </div>
 </div>
