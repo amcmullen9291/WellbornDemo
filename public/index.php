@@ -24,20 +24,21 @@ $Date = date("l");
 </head>
     <body>
         <?php
-            $url="http://api.openweathermap.org/data/2.5/forecast?q=Birmingham,usl&APPID=5099c5feb579c7a17b030de0d009282f&units=metric";
+            $url="http://api.openweathermap.org/data/2.5/forecast?q=Birmingham,usl&APPID=5099c5feb579c7a17b030de0d009282f&units=imperial";
             $json=file_get_contents($url);
             $data=json_decode($json);
+            $City= "Ashland, Alabama";
         echo "<div id='topHeader'>";
-            echo '<div><b>', $data->city->name, '</b></div>';
-            echo '<div><strong>Current:</strong> ', $data->list[0]->main->temp, '&deg; C</div>';
+            echo '<div>', $City, '</div>';
+            echo '<div><strong>Current:</strong> ', $data->list[0]->main->temp, '&deg; F</div>';
             ?>
 
         <div id="welcomeBox">
     <?php
 echo 
 date("l") . "<br>";
-
-echo date("jS \of F Y, h:i:s A");
+$dt = new DateTime("now", new DateTimeZone('America/Chicago'));
+echo $dt->format('jS \of F Y, H:i:s A');
 echo "</div>";
 ?>
 </div>
