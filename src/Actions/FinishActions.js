@@ -7,9 +7,17 @@ export const setFinishList = (list) => {
     }
 }
 
-export const selectedFinish = (stadium) => {
+export const selectedFinish = (finish) => {
     return {
         type: ActionTypes.SELECTED_FINISH,
-        payload: stadium
+        payload: finish
+    }
+}
+//experimental name setting 
+
+export const setName = (name) => {
+    return {
+        type: ActionTypes.SET_NAME,
+        payload: name
     }
 }

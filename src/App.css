@@ -46,7 +46,6 @@ hr {
    height:75%;
    width:98%;
     background-color: antiquewhite;
-    /* background-color: none; */
     margin-left: 1%;
     margin-right: 1%;
     border-bottom: 5px solid red;
@@ -187,4 +186,16 @@ hr {
 .emailText{
   color: darkkhaki;
   font-size: 20px;
+}
+
+#welcomeBox {
+  margin-left: 70%;
+  bottom: 0;
+  margin-right: 4%;
+  justify-content:end;
+}
+
+Footer{
+  bottom:0;
+  left:0;
 }

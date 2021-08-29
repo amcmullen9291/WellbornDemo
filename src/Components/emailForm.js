@@ -5,7 +5,7 @@ import Select from 'react-select';
 export default function emailForm() {
 
   function sendEmail(e) {
-    e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+    e.preventDefault();   
 
     emailjs.sendForm('gmail', 'template_z1a8o4a', e.target, 'YOUR_USER_ID')
       .then((result) => {

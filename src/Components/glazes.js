@@ -1,6 +1,6 @@
 import React from 'react'
 
-function pork() {
+function Glazes() {
   return (
     <>
     <div id="container">
@@ -36,10 +36,9 @@ function pork() {
 </div>
 
     </div>
-    <input type="hidden" id="finishesCounter" name="finishesCounter" git add/>
     </>
 
 )
 }
 
-export default pork
+export default Glazes;

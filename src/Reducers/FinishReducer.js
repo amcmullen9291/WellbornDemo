@@ -1,13 +1,13 @@
 import { ActionTypes } from '../Constants/Action.type';
 
 const initialState = {
-    StadiumList: [],
+    FinishesList: [],
 };
 
 export const FinishListReducer = (state=initialState, {type, payload}) => {
     switch (type) {
         case ActionTypes.SET_FINISHES:
-            return { ...state, StadiumList: payload};
+            return { ...state, FinishesList: payload};
         default:
             return state
     }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function beans() {
+function Laminates() {
   return (
               <>
         <div id="container">
@@ -36,9 +36,8 @@ function beans() {
 </div>
 
         </div>
-        <input type="hidden" id="finishesCounter" name="finishesCounter" value={finishesList.length}/>
         </>
 )
 }
 
-export default beans
+export default Laminates;

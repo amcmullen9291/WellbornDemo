@@ -4,8 +4,9 @@ This project is a demo showing available finishes; stains, stain with glaze, pai
 
 To run create-react-wptheme in your Ubutnu terminal cd into, or open a git bash terminal in, ../c/xampp/htdocs/wordpress/wp-content/themes.
 
-Site can be viewed at localhost/wordpress.
-
+Quotes fetched from the Universal Inspirational Quotes API.
+License
+This API can be used freely for individual usages. For commercial use, please contact us at https://healthruwords.com/contact-us/
 
 ## Available Scripts
 
