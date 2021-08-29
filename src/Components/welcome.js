@@ -22,7 +22,7 @@ function welcome() {
           <br/><br/>
           <a className="App-link" id="blog-link" href="https://www.wellborn.com/blog/" target="_blank" rel="noopener noreferrer">
                     A Wellborn Blog </a>
-                    <br/><br/><br/><br/><br/>
+                    <br/><br/><br/>
                     <center><button id="homebutton"><a  id="homebuttontext" className="App-link" href={"/wordpress"}>Return Home</a></button></center>
         </div>
                 <span id="addy">

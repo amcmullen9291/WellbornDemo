@@ -14,7 +14,8 @@
 	/* background-color: rgb(242, 142, 11);  */
 	overflow-x: hidden; 
 	padding-top: 20px;
-  height:75%;
+  overflow-y: hidden;
+  height:65%;
   outline: 1px solid #ddd;
 border-top: 1px solid #fff;
 padding: 10px;
@@ -190,12 +191,18 @@ hr {
 
 #welcomeBox {
   margin-left: 70%;
-  bottom: 0;
+  /* bottom: 0; */
   margin-right: 4%;
   justify-content:end;
+  color: white;
+  text-align: right;
 }
 
 Footer{
   bottom:0;
   left:0;
+}
+
+#topHeader{
+  background-color: teal;
 }

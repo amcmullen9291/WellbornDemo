@@ -37,7 +37,7 @@ $Date = date("l");
 echo 
 date("l") . "<br>";
 
-echo date("jS \of F Y h:i:s A");
+echo date("jS \of F Y, h:i:s A");
 echo "</div>";
 ?>
 </div>
