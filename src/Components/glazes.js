@@ -86,6 +86,7 @@ function Glazes() {
       useEffect(() => {
         fetchGlazes();
       }, []);
+      const count = glazesList.length;
 
       if (Object.keys(glazesList).length > 0) {
         var RenderGlazes = glazesList.map(glaze => {
@@ -132,7 +133,7 @@ function Glazes() {
     <div id="middleArea">
     <a id="emailButton" href={"/wordpress/contact"}>Contact Us</a>
 <div id="blogHolder">
-    <center><p id="blog">Glazes Page</p></center>
+    <center><p id="blog">Glazes Page ({count} now showing)</p></center>
     <div id="tableborder">
     <div id= "selectedFinish">
     <table>
@@ -141,7 +142,7 @@ function Glazes() {
           <th></th>
           <th >Material</th>
           <th></th>
-          <th colspan="6">Product Line</th>
+          <th colSpan="6">Product Line</th>
         </tr>
         <tr><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderGlazes}

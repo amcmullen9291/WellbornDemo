@@ -46,7 +46,7 @@ function Stains() {
       useEffect(() => {
         fetchStains();
       }, []);
-
+            const count = stainsList.length;
       if (Object.keys(stainsList).length > 0) {
         var RenderStains = stainsList.map(stain => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = stain;
@@ -92,7 +92,7 @@ function Stains() {
     <div id="middleArea">
     <a id="emailButton" href={"/wordpress/contact"}>Contact Us</a>
 <div id="blogHolder">
-    <center><p id="blog">Stains Page</p></center>
+    <center><p id="blog">Stains Page ({count} now showing)</p></center>
     <div id="tableborder">
     <div id= "selectedFinish">
     <table>
@@ -101,7 +101,7 @@ function Stains() {
           <th></th>
           <th >Material</th>
           <th></th>
-          <th colspan="6">Product Line</th>
+          <th colSpan="6">Product Line</th>
         </tr>
         <tr><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderStains}

@@ -28,6 +28,7 @@ function Melamine() {
       useEffect(() => {
         fetchGlazes();
       }, []);
+      const count = melamineList.length;
 
       if (Object.keys(melamineList).length > 0) {
         var RenderMelamine = melamineList.map(glaze => {
@@ -74,7 +75,7 @@ function Melamine() {
     <div id="middleArea">
     <a id="emailButton" href={"/wordpress/contact"}>Contact Us</a>
 <div id="blogHolder">
-    <center><p id="blog">Melamine Page</p></center>
+    <center><p id="blog">Melamine Page ({count} now showing)</p></center>
     <div id="tableborder">
     <div id= "selectedFinish">
     <table>
@@ -83,7 +84,7 @@ function Melamine() {
           <th></th>
           <th >Material</th>
           <th></th>
-          <th colspan="6">Product Line</th>
+          <th colSpan="6">Product Line</th>
         </tr>
         <tr><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderMelamine}

@@ -69,6 +69,7 @@ function Paints() {
       useEffect(() => {
         fetchPaints();
       }, []);
+      const count = paintsList.length;
 
       if (Object.keys(paintsList).length > 0) {
         var RenderPaints = paintsList.map(paint => {
@@ -115,7 +116,7 @@ function Paints() {
     <div id="middleArea">
     <a id="emailButton" href={"/wordpress/contact"}>Contact Us</a>
 <div id="blogHolder">
-    <center><p id="blog">Paints Page</p></center>
+    <center><p id="blog">Paints Page ({count} now showing)</p></center>
     <div id="tableborder">
     <div id= "selectedFinish">
     <table>
@@ -124,7 +125,7 @@ function Paints() {
           <th></th>
           <th >Material</th>
           <th></th>
-          <th colspan="6">Product Line</th>
+          <th colSpan="6">Product Line</th>
         </tr>
         <tr><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderPaints}

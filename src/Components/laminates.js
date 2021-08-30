@@ -29,6 +29,7 @@ function Laminates() {
       useEffect(() => {
         fetchLaminates();
       }, []);
+      const count = laminatesList.length;
 
       if (Object.keys(laminatesList).length > 0) {
         var RenderLaminates = laminatesList.map(glaze => {
@@ -75,7 +76,7 @@ function Laminates() {
     <div id="middleArea">
     <a id="emailButton" href={"/wordpress/contact"}>Contact Us</a>
 <div id="blogHolder">
-    <center><p id="blog">Laminates Page</p></center>
+    <center><p id="blog">Laminates Page ({count} now showing)</p></center>
     <div id="tableborder">
     <div id= "selectedFinish">
     <table>
@@ -84,7 +85,7 @@ function Laminates() {
           <th></th>
           <th >Material</th>
           <th></th>
-          <th colspan="6">Product Line</th>
+          <th colSpan="6">Product Line</th>
         </tr>
         <tr><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderLaminates}
