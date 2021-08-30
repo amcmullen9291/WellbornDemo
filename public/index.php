@@ -35,6 +35,7 @@ $Date = date("l");
 
         <div id="welcomeBox">
     <?php
+    
 $dt = new DateTime("now", new DateTimeZone('America/Chicago'));
 echo $dt->format('l, jS \of F Y, g:i:s A');
 echo "</div>";

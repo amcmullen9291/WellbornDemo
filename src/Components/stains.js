@@ -47,6 +47,7 @@ function Stains() {
         fetchStains();
       }, []);
             const count = stainsList.length;
+
       if (Object.keys(stainsList).length > 0) {
         var RenderStains = stainsList.map(stain => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = stain;
@@ -108,6 +109,17 @@ function Stains() {
         </table>
         </div>
     </div>
+    <center><div>
+  <input type="checkbox" id="horns" name="Oak"></input>
+  <label for="horns">Oak</label>
+  <input type="checkbox" id="horns" name="Maple"></input>
+  <label for="horns">Maple</label>
+  <input type="checkbox" id="horns" name="Hickory"></input>
+  <label for="horns">Hickory</label>
+  <input type="checkbox" id="horns" name="Cherry"></input>
+  <label for="horns">Cherry</label><br/>
+  <button>Reset Options</button>
+</div></center>
 </div>
 </div>
 
