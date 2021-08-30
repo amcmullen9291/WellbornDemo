@@ -230,8 +230,8 @@ function Welcome() {
     useEffect(() => {
       fetchFinishes();
     }, []);
-  
-  return (
+
+    return (
     <div>
               <>
         <div id="container">
@@ -268,14 +268,14 @@ function Welcome() {
 }
 const mapStateToProps = (state) => {
   return {
-    finishesList: state.finishesList
+    Index: state.Index
   }
 
 }
 
 const mapDispatchToProps = (dispatch) => {
   return{
-    finishesList: (finishesList) => { dispatch({type: 'SET_FINISHES', finishesList})}
+    Finish: (finishesList) => { dispatch({type: 'SELECTED_FINISH', finishesList})}
   }
 }
 

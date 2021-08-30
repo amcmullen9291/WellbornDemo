@@ -207,3 +207,34 @@ Footer{
 #topHeader{
   background-color: teal;
 }
+
+#selectedFinish {
+  border: 2px solid darkgrey;
+  height: fit-content;
+  background-color: yellowgreen;
+  width: 3em;
+}
+
+.tableSpacer{
+  /* background-color: black; */
+  border: 2px solid grey;
+  margin-left: 1px;
+  margin-right: 1px;
+  width: 5px;
+}
+
+#tableborder {
+  direction: rtl;
+  width:800px;
+  margin-left: 22%;
+  overflow-y: scroll;
+  height: 200px;
+}
+
+.rowcss{
+  border-bottom: 1px dashed black;
+}
+
+.rowcss{
+  font-size: 24px;
+}
