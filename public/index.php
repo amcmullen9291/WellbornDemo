@@ -35,17 +35,14 @@ $Date = date("l");
 
         <div id="welcomeBox">
     <?php
-echo 
-date("l") . "<br>";
 $dt = new DateTime("now", new DateTimeZone('America/Chicago'));
-echo $dt->format('jS \of F Y, H:i:s A');
+echo $dt->format('l, jS \of F Y, g:i:s A');
 echo "</div>";
 ?>
 </div>
 <noscript>
         You need to enable JavaScript to run this app.
     </noscript>
-
     <div id="root">
 
 </div>
