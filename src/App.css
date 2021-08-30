@@ -228,7 +228,7 @@ Footer{
   width:800px;
   margin-left: 22%;
   overflow-y: scroll;
-  height: 200px;
+  height: 250px;
 }
 
 .rowcss{
@@ -237,4 +237,22 @@ Footer{
 
 .rowcss{
   font-size: 24px;
+}
+
+.FinishSeries{
+  text-align: center;
+}
+
+td{
+  border: 1px solid black;
+}
+
+.FinishMaterial{
+  color: orangered;
+  text-align: center;
+}
+
+#header {
+  top:0;
+  position:relative;
 }
