@@ -77,6 +77,10 @@ function Paints() {
         const newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
+        dispatch5(selectedFinish(newList));
+        Finish = useState((state) => state.newList);
+        console.log("update:", Finish)
+
       }
 
       function finishPicture(e, src){

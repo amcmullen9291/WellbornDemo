@@ -94,7 +94,11 @@ function Glazes() {
         const newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
-}
+        dispatch2(selectedFinish(newList));
+        Finish = useState((state) => state.newList);
+        console.log("update:", Finish)
+
+      }
 
 function finishPicture(e, src){
   e.preventDefault();

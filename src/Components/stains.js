@@ -54,8 +54,9 @@ function Stains() {
         let newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
-        useEffect(dispatch3(selectedFinish(newList)));
-        Finish = newList;
+        dispatch3(selectedFinish(newList));
+        Finish = useState((state) => state.newList);
+        console.log("update:", Finish)
 
 }
 
@@ -157,7 +158,7 @@ function finishPicture(e, src){
 }
 const mapStateToProps = (state) => {
   return {
-    Finish: state.Finish
+    Finish: state.newList
   }
 
 }
