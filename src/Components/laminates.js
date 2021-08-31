@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
+import Swal from 'sweetalert2';
 
 function Laminates() {
     const [laminatesList, setLaminatesList ] = useState([
@@ -31,6 +32,20 @@ function Laminates() {
       }, []);
       const count = laminatesList.length;
 
+      function finishPicture(e, src){
+        e.preventDefault();
+        const img_src = src+".jpg";
+        Swal.fire({
+          title: src,
+          text: "",
+          imageUrl: `${process.env.PUBLIC_URL}/CabinetFinishes/Laminates/${img_src}`,
+          imageWidth: 400,
+          imageHeight: 400,
+          imageAlt: src,
+        })
+      }
+      
+
       if (Object.keys(laminatesList).length > 0) {
         var RenderLaminates = laminatesList.map(glaze => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = glaze;
@@ -39,7 +54,7 @@ function Laminates() {
             <th>
             </th>
           <tr key={id}>
-            <td className="rowcss">{nameOf}</td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
+            <td className="rowcss"><a href="#" onClick={(e) => finishPicture(e, `${nameOf}`)}>{nameOf}</a></td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
           </tr>
           </>
             )

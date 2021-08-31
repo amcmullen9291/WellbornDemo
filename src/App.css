@@ -255,6 +255,8 @@ td{
 #header {
   top:0;
   position:relative;
+  /* overflow: auto;
+  height:100%; */
 }
 
 .sortButtons{
@@ -267,6 +269,14 @@ td{
   font-size: 18px;
 }
 .sortButtons:hover{
-  background-color: yellow;
-
+  background-color: orangered;
+  color:blue;
 }
+
+#tabletop{
+  visibility:visible;
+}
+
+/* #tabletop tr td:hover{
+  visibility:visible;
+} */

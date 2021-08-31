@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
+import Swal from 'sweetalert2';
 
 function Paints() {
     const [Finish, setFinish ] = useState([
@@ -76,7 +77,21 @@ function Paints() {
         const newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
-}
+      }
+
+      function finishPicture(e, src){
+        e.preventDefault();
+        const img_src = src+".jpg";
+        Swal.fire({
+          title: src,
+          text: "",
+          imageUrl: `${process.env.PUBLIC_URL}/CabinetFinishes/Paints/${img_src}`,
+          imageWidth: 400,
+          imageHeight: 400,
+          imageAlt: src,
+        })
+      }
+      
 
       if (Object.keys(Finish).length > 0) {
         var RenderPaints = Finish.map(paint => {
@@ -86,7 +101,7 @@ function Paints() {
             <th>
             </th>
           <tr key={id}>
-            <td className="rowcss">{nameOf}</td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
+            <td className="rowcss"><a href="#" onClick={(e) => finishPicture(e, `${nameOf}`)}>{nameOf}</a></td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
           </tr>
           </>
             )

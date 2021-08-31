@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
+import Swal from 'sweetalert2';
 
 function Stains() {
     var [Finish, setFinish ] = useState([
@@ -55,6 +56,19 @@ function Stains() {
         console.log("New List:", newList);
 }
 
+function finishPicture(e, src){
+  e.preventDefault();
+  const img_src = src+".jpg";
+  Swal.fire({
+    title: src,
+    text: "",
+    imageUrl: `${process.env.PUBLIC_URL}/CabinetFinishes/Stains/${img_src}`,
+    imageWidth: 400,
+    imageHeight: 400,
+    imageAlt: src,
+  })
+}
+
       if (Object.keys(Finish).length > 0) {
         var RenderStains = Finish.map(stain => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = stain;
@@ -63,7 +77,7 @@ function Stains() {
             <th>
             </th>
           <tr key={id}>
-            <td className="rowcss">{nameOf}</td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
+            <td className="rowcss"><a href="#" onClick={(e) => finishPicture(e, `${nameOf}`)}>{nameOf}</a></td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
           </tr>
           </>
             )
@@ -111,7 +125,7 @@ function Stains() {
           <th></th>
           <th colSpan="6">Product Line</th>
         </tr>
-        <tr><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
+        <tr id="tabletop"><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderStains}
         </table>
         </div>

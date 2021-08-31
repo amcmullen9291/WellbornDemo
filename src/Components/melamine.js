@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
+import Swal from 'sweetalert2';
 
 function Melamine() {
     const [melamineList, setMelamineList ] = useState([
@@ -20,15 +21,29 @@ function Melamine() {
 
     ])
     const dispatch3 = useDispatch();
-    const fetchGlazes = () => {
+    const fetchMelamine = () => {
         dispatch3(selectedFinish(melamineList));
         console.log("Current listings:", melamineList)
       };
       
       useEffect(() => {
-        fetchGlazes();
+        fetchMelamine();
       }, []);
       const count = melamineList.length;
+
+      function finishPicture(e, src){
+        e.preventDefault();
+        const img_src = src+".jpg";
+        Swal.fire({
+          title: src,
+          text: "",
+          imageUrl: `${process.env.PUBLIC_URL}/CabinetFinishes/Melamine/${img_src}`,
+          imageWidth: 400,
+          imageHeight: 400,
+          imageAlt: src,
+        })
+      }
+      
 
       if (Object.keys(melamineList).length > 0) {
         var RenderMelamine = melamineList.map(glaze => {
@@ -38,7 +53,7 @@ function Melamine() {
             <th>
             </th>
           <tr key={id}>
-            <td className="rowcss">{nameOf}</td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
+            <td className="rowcss"><a href="#" onClick={(e) => finishPicture(e, `${nameOf}`)}>{nameOf}</a></td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
           </tr>
           </>
             )
