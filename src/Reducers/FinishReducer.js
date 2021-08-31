@@ -16,7 +16,7 @@ export const FinishListReducer = (state=initialState, {type, payload}) => {
 export const FinishReducer = (state={}, {type, payload}) => {
     switch (type) {
         case ActionTypes.SELECTED_FINISH:
-            return { ...state, ...payload};
+            return { ...state, Finish: payload};
         default:
             return state;
     }

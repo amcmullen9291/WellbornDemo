@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
 
 function Stains() {
-    const [stainsList, setStainsList ] = useState([
+    var [stainsList, setStainsList ] = useState([
         //Hickory Stains
      {id: "130", nameOf: "Ash", material: "Hickory", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "X", home_concepts: "", wellborn_closets: "", glazes: "", stains: "X", laminates: "", melamine:"", paints: "" },      
      {id: "131", nameOf: "Blush", material: "Hickory", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "X", home_concepts: "", wellborn_closets: "", glazes: "", stains: "X", laminates: "", melamine:"", paints: "" },      
@@ -47,6 +47,15 @@ function Stains() {
         fetchStains();
       }, []);
             const count = stainsList.length;
+
+      function SortByMaterial(e, wood){
+        e.preventDefault();
+        // const dispatch = useDispatch();
+        const newList = stainsList.filter(finish => finish.material == wood);
+        console.log("type:", wood);
+        console.log("New List:", newList);
+        // dispatch(selectedFinish(newList));
+  }
 
       if (Object.keys(stainsList).length > 0) {
         var RenderStains = stainsList.map(stain => {
@@ -110,14 +119,14 @@ function Stains() {
         </div>
     </div>
     <center><div>
-  <input type="checkbox" id="horns" name="Oak"></input>
-  <label for="horns">Oak</label>
-  <input type="checkbox" id="horns" name="Maple"></input>
-  <label for="horns">Maple</label>
-  <input type="checkbox" id="horns" name="Hickory"></input>
-  <label for="horns">Hickory</label>
-  <input type="checkbox" id="horns" name="Cherry"></input>
-  <label for="horns">Cherry</label><br/>
+  <button id="horns1" name="Oak" onClick={(e) => SortByMaterial(e, "Oak")}>Oak</button>
+  <label>Oak</label>
+  <input type="checkbox" id="horns2" name="Maple"></input>
+  <label>Maple</label>
+  <input type="checkbox" id="horns3" name="Hickory"></input>
+  <label>Hickory</label>
+  <input type="checkbox" id="horns4" name="Cherry"></input>
+  <label>Cherry</label><br/>
   <button>Reset Options</button>
 </div></center>
 </div>
@@ -128,5 +137,21 @@ function Stains() {
 
 )
 }
+const mapStateToProps = (state) => {
+  return {
+    Finish: state.Finish
+  }
 
-export default Stains;
+}
+
+
+// console.log("Finishes:", stainsList)
+
+const mapDispatchToProps = (dispatch) => {
+  return{
+    stainsList: (stainsList) => { dispatch({type: 'SELECTED_FINISH', stainsList})}
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Stains);

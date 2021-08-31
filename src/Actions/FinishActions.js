@@ -15,9 +15,3 @@ export const selectedFinish = (finish) => {
 }
 //experimental name setting 
 
-export const setName = (name) => {
-    return {
-        type: ActionTypes.SET_NAME,
-        payload: name
-    }
-}
