@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
 
 function Paints() {
-    const [paintsList, setPaintsList ] = useState([
+    const [Finish, setFinish ] = useState([
         //MDF Paints
      {id: "153", nameOf: "Mint", material: "MDF", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "", home_concepts: "", wellborn_closets: "", glazes: "", stains: "", laminates: "", melamine:"", paints: "X" },      
      {id: "154", nameOf: "Olive", material: "MDF", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "", home_concepts: "", wellborn_closets: "", glazes: "", stains: "", laminates: "", melamine:"", paints: "X" },      
@@ -62,17 +62,24 @@ function Paints() {
     ])
     const dispatch5 = useDispatch();
     const fetchPaints = () => {
-        dispatch5(selectedFinish(paintsList));
-        console.log("Current listings:", paintsList)
+        dispatch5(selectedFinish(Finish));
+        console.log("Current listings:", Finish)
       };
       
       useEffect(() => {
         fetchPaints();
       }, []);
-      const count = paintsList.length;
+      const count = Finish.length;
 
-      if (Object.keys(paintsList).length > 0) {
-        var RenderPaints = paintsList.map(paint => {
+      function SortByMaterial(e, wood){
+        e.preventDefault();
+        const newList = Finish.filter(finish => finish.material == wood);
+        console.log("type:", wood);
+        console.log("New List:", newList);
+}
+
+      if (Object.keys(Finish).length > 0) {
+        var RenderPaints = Finish.map(paint => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = paint;
           return (
             <>
@@ -132,6 +139,13 @@ function Paints() {
         </table>
         </div>
     </div>
+    <center><div>
+      <hr/>
+  <button className="sortButtons" name="Oak" onClick={(e) => SortByMaterial(e, "Oak")}>Oak</button>
+  <button className="sortButtons" name="Hickory" onClick={(e) => SortByMaterial(e, "MDF")}>MDF</button>
+  <button className="sortButtons" name="Cherry" onClick={(e) => SortByMaterial(e, "Maple")}>Maple</button><br/>
+  <button>Reset Options</button>
+</div></center>
 </div>
 </div>
 
