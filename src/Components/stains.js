@@ -3,7 +3,7 @@ import { connect, useDispatch } from 'react-redux';
 import { selectedFinish } from '../Actions/FinishActions';
 
 function Stains() {
-    var [stainsList, setStainsList ] = useState([
+    var [Finish, setFinish ] = useState([
         //Hickory Stains
      {id: "130", nameOf: "Ash", material: "Hickory", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "X", home_concepts: "", wellborn_closets: "", glazes: "", stains: "X", laminates: "", melamine:"", paints: "" },      
      {id: "131", nameOf: "Blush", material: "Hickory", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "X", home_concepts: "", wellborn_closets: "", glazes: "", stains: "X", laminates: "", melamine:"", paints: "" },      
@@ -39,26 +39,24 @@ function Stains() {
     ])
     const dispatch3 = useDispatch();
     const fetchStains = () => {
-        dispatch3(selectedFinish(stainsList));
-        console.log("Current listings:", stainsList)
+        dispatch3(selectedFinish(Finish));
+        console.log("Current listings:", Finish)
       };
       
       useEffect(() => {
         fetchStains();
       }, []);
-            const count = stainsList.length;
+            const count = Finish.length;
 
       function SortByMaterial(e, wood){
         e.preventDefault();
-        // const dispatch = useDispatch();
-        const newList = stainsList.filter(finish => finish.material == wood);
+        const newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
-        // dispatch(selectedFinish(newList));
-  }
+}
 
-      if (Object.keys(stainsList).length > 0) {
-        var RenderStains = stainsList.map(stain => {
+      if (Object.keys(Finish).length > 0) {
+        var RenderStains = Finish.map(stain => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = stain;
           return (
             <>
@@ -119,14 +117,11 @@ function Stains() {
         </div>
     </div>
     <center><div>
-  <button id="horns1" name="Oak" onClick={(e) => SortByMaterial(e, "Oak")}>Oak</button>
-  <label>Oak</label>
-  <input type="checkbox" id="horns2" name="Maple"></input>
-  <label>Maple</label>
-  <input type="checkbox" id="horns3" name="Hickory"></input>
-  <label>Hickory</label>
-  <input type="checkbox" id="horns4" name="Cherry"></input>
-  <label>Cherry</label><br/>
+      <hr/>
+  <button className="sortButtons" name="Oak" onClick={(e) => SortByMaterial(e, "Oak")}>Oak</button>
+  <button className="sortButtons" name="Hickory" onClick={(e) => SortByMaterial(e, "Hickory")}>Hickory</button>
+  <button className="sortButtons" name="Cherry" onClick={(e) => SortByMaterial(e, "Cherry")}>Cherry</button><br/>
+
   <button>Reset Options</button>
 </div></center>
 </div>
@@ -144,12 +139,9 @@ const mapStateToProps = (state) => {
 
 }
 
-
-// console.log("Finishes:", stainsList)
-
 const mapDispatchToProps = (dispatch) => {
   return{
-    stainsList: (stainsList) => { dispatch({type: 'SELECTED_FINISH', stainsList})}
+    Finish: (Finish) => { dispatch({type: 'SELECTED_FINISH', Finish})}
   }
 }
 

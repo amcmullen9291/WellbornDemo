@@ -256,3 +256,8 @@ td{
   top:0;
   position:relative;
 }
+
+.sortButtons{
+  color: crimson;
+  margin:1em;
+}
