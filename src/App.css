@@ -259,5 +259,14 @@ td{
 
 .sortButtons{
   color: crimson;
-  margin:1em;
+  margin-left:1em;
+  margin-right:1em;
+  margin-bottom: 5px;
+  /* background-color: lightslategray; */
+  /* border-radius: 50%; */
+  font-size: 18px;
+}
+.sortButtons:hover{
+  background-color: yellow;
+
 }
