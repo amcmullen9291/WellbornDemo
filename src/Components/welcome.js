@@ -268,7 +268,7 @@ function Welcome() {
 }
 const mapStateToProps = (state) => {
   return {
-    Index: state.Index
+    finishesList: state.finishesList
   }
 
 }

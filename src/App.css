@@ -175,6 +175,8 @@ hr {
 
 #emailButton{
   margin-left: 92%;
+  font-size: 20px;
+  color: purple;
 }
 
 #emailList{
@@ -233,6 +235,7 @@ Footer{
 
 .rowcss{
   border-bottom: 1px dashed black;
+  color: purple;
 }
 
 .rowcss{
@@ -280,3 +283,8 @@ td{
 /* #tabletop tr td:hover{
   visibility:visible;
 } */
+
+.rowcss a {
+  color: black;
+  font-size: 22px;
+}

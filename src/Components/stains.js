@@ -51,9 +51,18 @@ function Stains() {
 
       function SortByMaterial(e, wood){
         e.preventDefault();
-        const newList = Finish.filter(finish => finish.material == wood);
+        let newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
+        useEffect(dispatch3(selectedFinish(newList)));
+        Finish = newList;
+
+}
+
+var newList = [];
+if(Object.keys(newList).length>0){
+  dispatch3(selectedFinish(newList));
+  Finish = newList;
 }
 
 function finishPicture(e, src){
@@ -125,7 +134,7 @@ function finishPicture(e, src){
           <th></th>
           <th colSpan="6">Product Line</th>
         </tr>
-        <tr id="tabletop"><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
+        <tr id="tabletops"><td></td><td></td><td></td><td></td><td>PremiumSeries</td><td>EstateSeries</td><td>ElegantBath</td><td>Aspire</td><td>HomeConcepts</td><td>SelectSeries</td></tr>
         {RenderStains}
         </table>
         </div>
