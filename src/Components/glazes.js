@@ -100,7 +100,7 @@ function Glazes() {
 
       function resetPage(e){
         e.preventDefault();
-        location.reload();
+        window.location.reload();
         console.log("page resetting");
       }
             

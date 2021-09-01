@@ -56,14 +56,11 @@ function Stains() {
         console.log("New List:", newList);
         dispatch3(filteredList(newList));
         setFinish(newList);
-        // const muteButtons = document.getElementsByClassName('sortButtons');
-        // console.log(muteButtons);
-        // muteButtons.disabled = true;
 }
 
 function resetPage(e){
   e.preventDefault();
-  location.reload();
+  window.location.reload();
   console.log("page resetting");
 }
 
