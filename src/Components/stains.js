@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { connect, useDispatch } from 'react-redux';
-import { selectedFinish } from '../Actions/FinishActions';
+import { selectedFinish, filteredList } from '../Actions/FinishActions';
 import Swal from 'sweetalert2';
 
 function Stains() {
-    var [Finish, setFinish ] = useState([
+    let [Finish, setFinish ] = useState([
         //Hickory Stains
      {id: "130", nameOf: "Ash", material: "Hickory", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "X", home_concepts: "", wellborn_closets: "", glazes: "", stains: "X", laminates: "", melamine:"", paints: "" },      
      {id: "131", nameOf: "Blush", material: "Hickory", premium_series: "X", estate_series: "X", elegant_bath: "X", aspire: "X", select_series: "X", home_concepts: "", wellborn_closets: "", glazes: "", stains: "X", laminates: "", melamine:"", paints: "" },      
@@ -54,10 +54,9 @@ function Stains() {
         let newList = Finish.filter(finish => finish.material == wood);
         console.log("type:", wood);
         console.log("New List:", newList);
-        dispatch3(selectedFinish(newList));
-        Finish = useState((state) => state.newList);
+        dispatch3(filteredList(newList));
+        Finish = newList;
         console.log("update:", Finish)
-
 }
 
 var newList = [];
@@ -157,8 +156,9 @@ function finishPicture(e, src){
 )
 }
 const mapStateToProps = (state) => {
+  console.log("The state has been changed.");
   return {
-    Finish: state.newList
+    Finish: state.Finish
   }
 
 }

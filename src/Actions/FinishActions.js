@@ -13,5 +13,11 @@ export const selectedFinish = (finish) => {
         payload: finish
     }
 }
-//experimental name setting 
+//experimental filter action 
+export const filteredList = (filter) => {
+    return {
+        type: ActionTypes.FILTERED_LIST,
+        payload: filter
+    }
+}
 

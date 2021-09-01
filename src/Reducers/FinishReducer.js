@@ -21,3 +21,12 @@ export const FinishReducer = (state={}, {type, payload}) => {
             return state;
     }
 }
+//filter reducer
+export const FilteredList = (state={}, {type, payload}) => {
+    switch (type) {
+        case ActionTypes.FILTERED_LIST:
+            return { ...state, Filter: payload};
+        default:
+            return state;
+    }
+}

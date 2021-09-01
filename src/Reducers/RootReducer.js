@@ -1,10 +1,11 @@
 import { combineReducers } from 'redux';
-import { FinishReducer, FinishListReducer } from './FinishReducer';
+import { FinishReducer, FinishListReducer, FilteredList } from './FinishReducer';
 
 
 const RootReducer = combineReducers({
     Index: FinishListReducer,
-    Finish: FinishReducer
+    Finish: FinishReducer,
+    Filter: FilteredList
 });
 
 export default RootReducer;
