@@ -51,12 +51,20 @@ function Stains() {
 
       function SortByMaterial(e, wood){
         e.preventDefault();
-        let newList = Finish.filter(finish => finish.material == wood);
+        const newList = Finish.filter(finish => finish.material === wood);
         console.log("type:", wood);
         console.log("New List:", newList);
         dispatch3(filteredList(newList));
-        Finish = newList;
-        console.log("update:", Finish)
+        setFinish(newList);
+        // const muteButtons = document.getElementsByClassName('sortButtons');
+        // console.log(muteButtons);
+        // muteButtons.disabled = true;
+}
+
+function resetPage(e){
+  e.preventDefault();
+  location.reload();
+  console.log("page resetting");
 }
 
 var newList = [];
@@ -79,6 +87,21 @@ function finishPicture(e, src){
 }
 
       if (Object.keys(Finish).length > 0) {
+        var RenderStains = Finish.map(stain => {
+          const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = stain;
+          return (
+            <>
+            <th>
+            </th>
+          <tr key={id}>
+            <td className="rowcss"><a href="#" onClick={(e) => finishPicture(e, `${nameOf}`)}>{nameOf}</a></td><td className="tableSpacer"></td><td className="FinishMaterial">{material}</td><td className="tableSpacer"></td><td className="FinishSeries">{premium_series}</td><td className="FinishSeries">{estate_series}</td><td className="FinishSeries">{elegant_bath}</td><td className="FinishSeries">{aspire}</td><td className="FinishSeries">{home_concepts}</td><td className="FinishSeries">{select_series}</td>
+          </tr>
+          </>
+            )
+        })
+      }
+
+      if (Object.keys(newList).length > 0) {
         var RenderStains = Finish.map(stain => {
           const {id, nameOf, material, premium_series, aspire, estate_series, elegant_bath, select_series, home_concepts } = stain;
           return (
@@ -145,7 +168,7 @@ function finishPicture(e, src){
   <button className="sortButtons" name="Hickory" onClick={(e) => SortByMaterial(e, "Hickory")}>Hickory</button>
   <button className="sortButtons" name="Cherry" onClick={(e) => SortByMaterial(e, "Cherry")}>Cherry</button><br/>
 
-  <button>Reset Options</button>
+  <button onClick={resetPage}>Reset Options</button>
 </div></center>
 </div>
 </div>

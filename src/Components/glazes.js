@@ -91,15 +91,19 @@ function Glazes() {
 
       function SortByMaterial(e, wood){
         e.preventDefault();
-        const newList = Finish.filter(finish => finish.material == wood);
+        const newList = Finish.filter(finish => finish.material === wood);
         console.log("type:", wood);
         console.log("New List:", newList);
         dispatch2(selectedFinish(newList));
-        Finish = useState((state) => state.newList);
-        console.log("update:", Finish)
-
+        setFinish(newList)
       }
 
+      function resetPage(e){
+        e.preventDefault();
+        location.reload();
+        console.log("page resetting");
+      }
+            
 function finishPicture(e, src){
   e.preventDefault();
   const img_src = src+".jpg";
@@ -181,7 +185,7 @@ function finishPicture(e, src){
   <button className="sortButtons" name="Hickory" onClick={(e) => SortByMaterial(e, "Hickory")}>Hickory</button>
   <button className="sortButtons" name="Maple" onClick={(e) => SortByMaterial(e, "Maple")}>Maple</button>
   <button className="sortButtons" name="Cherry" onClick={(e) => SortByMaterial(e, "Cherry")}>Cherry</button><br/>
-  <button>Reset Options</button>
+  <button onClick={resetPage}>Reset Options</button>
 </div></center>
 </div>
 </div>
