@@ -56,6 +56,7 @@ function Stains() {
         console.log("New List:", newList);
         dispatch3(filteredList(newList));
         setFinish(newList);
+        e.target.innerHTML = "✔";
 }
 
 function resetPage(e){

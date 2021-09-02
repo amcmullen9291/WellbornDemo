@@ -79,7 +79,7 @@ function Paints() {
         console.log("New List:", newList);
         dispatch5(selectedFinish(newList));
         setFinish(newList)
-
+        e.target.innerHTML = "✔";
       }
 
       function resetPage(e){

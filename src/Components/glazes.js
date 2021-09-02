@@ -95,7 +95,8 @@ function Glazes() {
         console.log("type:", wood);
         console.log("New List:", newList);
         dispatch2(selectedFinish(newList));
-        setFinish(newList)
+        setFinish(newList);
+        e.target.innerHTML = "✔";
       }
 
       function resetPage(e){
